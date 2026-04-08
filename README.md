@@ -109,8 +109,8 @@ OceanOS/
 ### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/AdvayaBGSCET/team-numero-uno.git
-cd team-numero-uno
+git clone (https://github.com/ishaaqdev/OceanOS.git)
+cd 
 ```
 
 ---
