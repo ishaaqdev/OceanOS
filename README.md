@@ -16,6 +16,8 @@
 
 ---
 
+**[🌐 View the Detailed Platform Website](https://ishaaqdev.github.io/OceanOS/)**
+
 ## Overview
 
 OceanOS is an integrated marine conservation platform that simulates, monitors, and manages ocean cleanup operations in real time. It combines a Node.js backend, an interactive admin dashboard, a fisherman incentive app, and multiple standalone 3D simulations — all communicating via WebSockets and a REST API.
