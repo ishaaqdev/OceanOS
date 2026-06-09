@@ -258,6 +258,8 @@ The backend exposes a REST API at `http://localhost:3001`.
 
 ## Tech Stack
 
+### Technology Layers
+
 | Layer | Technology |
 |---|---|
 | **Backend** | Node.js, Express.js, WebSocket (`ws`) |
@@ -269,6 +271,20 @@ The backend exposes a REST API at `http://localhost:3001`.
 | **Standalone Sims** | Vite + TypeScript |
 | **Frontend** | Vanilla HTML / CSS / JavaScript |
 | **File Uploads** | Multer |
+
+### Module and Application Breakdown
+
+| Module / Application | Primary Technologies | Description |
+| :--- | :--- | :--- |
+| **Backend API** | Node.js, Express, `sql.js` (WebAssembly SQLite), `ws` (WebSockets) | Core REST and WS feed serving database changes. |
+| **Landing Page** | HTML5, CSS3, Vanilla ES6 JS, Canvas 2D | Entry point with wave particles and app launcher. |
+| **Command Center Dashboard** | HTML5, Vanilla ES6 JS, CSS3, `Chart.js` | Admin dashboard with charts and live alerts. |
+| **FisherGuard Companion** | HTML5, Vanilla ES6 JS, CSS3, Canvas 2D | Fisherman credit tracking, map, and Gemini chat. |
+| **Unified 3D Simulation** | Three.js (WebGL), HTML5 | Full 3D environment showing all operational zones. |
+| **Autonomous Drone Patrol** | Three.js (WebGL), Canvas 2D (minimap) | Standalone UAV flight simulation with AI bounding box tracking. |
+| **Factory Chemical Spill** | Three.js (WebGL), Canvas 2D (smoke/oil particles) | Plume dispersion simulator and buoy warnings. |
+| **River Plastic Interceptor** | Vite, TypeScript, Three.js, `Chart.js` | 3D physics interceptor net with rate analytics. |
+| **Ocean Boom Cleanup** | Vite, TypeScript, Three.js, Canvas 2D | 3D U-boom current collection simulator. |
 
 ---
 
