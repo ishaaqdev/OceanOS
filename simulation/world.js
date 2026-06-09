@@ -9,7 +9,8 @@ import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
 // ═══════════════════════════════════════════════════════
 // GLOBALS
 // ═══════════════════════════════════════════════════════
-const API = 'http://localhost:3001/api';
+const API_PORT = window.OceanOS_Backend_Port || 3001;
+const API = `http://localhost:${API_PORT}/api`;
 let scene, camera, renderer, controls, clock;
 
 const world = {

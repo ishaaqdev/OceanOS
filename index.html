@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>OceanOS — Marine Conservation & Monitoring Platform</title>
+  <meta name="description" content="A full-stack, real-time ocean health monitoring and conservation management system powered by AI.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav id="mainNav">
+  <div class="nav-logo">
+    <div class="nav-logo-dot"></div>
+    OceanOS
+  </div>
+  <div class="nav-right">
+    <ul class="nav-links">
+      <li><a href="#overview">Overview</a></li>
+      <li><a href="#apps">Applications</a></li>
+      <li><a href="#tech">Tech Stack</a></li>
+      <li><a href="#gallery">Gallery</a></li>
+    </ul>
+    <a href="https://github.com/ishaaqdev/OceanOS" target="_blank" class="nav-gh">
+      <svg viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+      GitHub
+    </a>
+    <button class="nav-hamburger" id="navToggle" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<div class="mobile-nav" id="mobileNav">
+  <a href="#overview" onclick="closeMobile()">Overview</a>
+  <a href="#apps" onclick="closeMobile()">Applications</a>
+  <a href="#tech" onclick="closeMobile()">Tech Stack</a>
+  <a href="#gallery" onclick="closeMobile()">Gallery</a>
+  <a href="https://github.com/ishaaqdev/OceanOS" target="_blank" onclick="closeMobile()">GitHub</a>
+</div>
+
+<!-- HERO -->
+<div class="hero">
+  <canvas id="ocean-canvas"></canvas>
+  <div class="hero-grid"></div>
+  <div class="hero-orb"></div>
+
+  <div class="hero-content">
+    <div class="hero-badge">
+      <div class="hero-badge-dot"></div>
+      Local-First &nbsp;·&nbsp; Node.js &nbsp;·&nbsp; Gemini AI &nbsp;·&nbsp; Three.js
+    </div>
+    <h1 class="hero-title">OceanOS Platform</h1>
+    <p class="hero-sub">
+      A full-stack, real-time ocean health monitoring and conservation management system.
+      Explore integrated dashboards, mobile tools, and 3D simulations.
+    </p>
+
+    <div class="hero-ctas">
+      <a href="#apps" class="hero-cta">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+        Launch Applications
+      </a>
+      <a href="https://github.com/ishaaqdev/OceanOS" target="_blank" class="hero-cta-secondary">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+        View Source
+      </a>
+    </div>
+
+    <div class="hero-stats">
+      <div class="stat">
+        <span class="stat-val">7</span>
+        <span class="stat-label">Interactive Modules</span>
+      </div>
+      <div class="stat">
+        <span class="stat-val">5s</span>
+        <span class="stat-label">Telemetry Update</span>
+      </div>
+      <div class="stat">
+        <span class="stat-val">0</span>
+        <span class="stat-label">Cloud Dependencies</span>
+      </div>
+      <div class="stat">
+        <span class="stat-val">AI</span>
+        <span class="stat-label">Gemini Analytics</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="scroll-hint">
+    <div class="scroll-line"></div>
+    SCROLL
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<!-- OVERVIEW -->
+<section id="overview">
+  <div class="section-label">01 // The System</div>
+  <h2 class="section-title reveal">Comprehensive Marine Oversight.</h2>
+
+  <div class="origin-grid reveal">
+    <div class="origin-text">
+      <p>
+        OceanOS is an integrated, full-stack marine conservation system bringing together <strong>real-time telemetry</strong>, predictive simulation, and operational incentives into a unified workspace.
+      </p>
+      <p>
+        Powered by a local-first architecture, the platform pairs an Express.js backend with an in-memory <code>sql.js</code> database. Sensor telemetry and cleanup logs are broadcast in real-time using a WebSockets framework, enabling instantaneous client synchronization.
+      </p>
+      <p>
+        For Vercel production deployment, OceanOS utilizes a client-side **DB & WS Interceptor** that emulates backend operations directly within the browser, delivering complete, zero-dependency interactivity across all applications.
+      </p>
+    </div>
+
+    <div class="origin-visual">
+      <div class="flow-step">
+        <div class="flow-num">1</div>
+        <div class="flow-content">
+          <h4>Unified 3D Simulation</h4>
+          <p>Real-time rendering of ocean cleanup booms, autonomous drone patrols, and river plastics using WebGL.</p>
+        </div>
+      </div>
+      <div class="flow-step">
+        <div class="flow-num">2</div>
+        <div class="flow-content">
+          <h4>Admin Command Center</h4>
+          <p>Centralized monitoring dashboard displaying sensor charts, buoy pollution levels, and illegal vessel alerts.</p>
+        </div>
+      </div>
+      <div class="flow-step">
+        <div class="flow-num">3</div>
+        <div class="flow-content">
+          <h4>FisherGuard App</h4>
+          <p>A mobile tool designed for maritime workers to return nets, log plastic collection, and earn reward credits.</p>
+        </div>
+      </div>
+      <div class="flow-step">
+        <div class="flow-num">4</div>
+        <div class="flow-content">
+          <h4>Google Gemini AI</h4>
+          <p>Advanced LLM integration for analyzing marine debris types, identifying catches, and generating containment advice.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- APPLICATIONS -->
+<section id="apps">
+  <div class="section-label">02 // Interactive Applications</div>
+  <h2 class="section-title reveal">Launch Modules.</h2>
+  <p class="section-sub reveal">Run any component of the OceanOS platform. Telemetry and records sync in real-time across tabs.</p>
+
+  <div class="apps-grid reveal">
+    <!-- 1. Unified 3D World -->
+    <div class="app-card">
+      <div class="app-card-header">
+        <span class="app-type">3D World</span>
+        <div class="app-tech-pills">
+          <span class="tech-pill">Three.js</span>
+          <span class="tech-pill">WebGL</span>
+        </div>
+      </div>
+      <h3>Unified 3D Simulation</h3>
+      <p>Visualize all operations in a single, connected 3D ocean world. Watch collection boats patrol, factories discharge pollution, and drones monitor MPA zones.</p>
+      <a href="simulation/" target="_blank" class="app-launch-btn">
+        Launch Simulation
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+      </a>
+    </div>
+
+    <!-- 2. Admin Dashboard -->
+    <div class="app-card">
+      <div class="app-card-header">
+        <span class="app-type">Control Room</span>
+        <div class="app-tech-pills">
+          <span class="tech-pill">WebSockets</span>
+          <span class="tech-pill">Chart.js</span>
+        </div>
+      </div>
+      <h3>Admin Command Center</h3>
+      <p>Analyze telemetry data through an administrative dashboard. Monitor live sensor feeds, track drone detection histories, and interact with Gemini AI.</p>
+      <a href="dashboard/" target="_blank" class="app-launch-btn">
+        Launch Command Center
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+      </a>
+    </div>
+
+    <!-- 3. Fisherman Companion -->
+    <div class="app-card">
+      <div class="app-card-header">
+        <span class="app-type">Mobile Web</span>
+        <div class="app-tech-pills">
+          <span class="tech-pill">HTML5 Canvas</span>
+          <span class="tech-pill">REST API</span>
+        </div>
+      </div>
+      <h3>FisherGuard Mobile</h3>
+      <p>Sustainable fishing helper. Access live maps showing zone fish densities, report derelict plastic fishing nets, and identify catches using Gemini AI.</p>
+      <a href="fisherman-app/" target="_blank" class="app-launch-btn">
+        Launch FisherGuard
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+      </a>
+    </div>
+
+    <!-- 4. Drone Patrol -->
+    <div class="app-card">
+      <div class="app-card-header">
+        <span class="app-type">3D Simulation</span>
+        <div class="app-tech-pills">
+          <span class="tech-pill">Three.js</span>
+          <span class="tech-pill">AI Detection</span>
+        </div>
+      </div>
+      <h3>Autonomous Drone Patrol</h3>
+      <p>A standalone simulation showcasing autonomous UAV flight paths. Scans the water for plastic debris, logs marine life, and detects MPA fishing violations.</p>
+      <a href="ocean-drone-sim/" target="_blank" class="app-launch-btn">
+        Launch Drone Patrol
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+      </a>
+    </div>
+
+    <!-- 5. Factory Pollution -->
+    <div class="app-card">
+      <div class="app-card-header">
+        <span class="app-type">3D Simulation</span>
+        <div class="app-tech-pills">
+          <span class="tech-pill">Three.js</span>
+          <span class="tech-pill">Alert Systems</span>
+        </div>
+      </div>
+      <h3>Chemical Spill &amp; Buoy Monitor</h3>
+      <p>Simulates industrial shore outflows. Watch toxic dispersion plumes trigger localized warning buoys and send alarms to the command center.</p>
+      <a href="ocean-pollution-sim/" target="_blank" class="app-launch-btn">
+        Launch Spill Monitor
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+      </a>
+    </div>
+
+    <!-- 6. River Interceptor -->
+    <div class="app-card">
+      <div class="app-card-header">
+        <span class="app-type">Vite Project</span>
+        <div class="app-tech-pills">
+          <span class="tech-pill">TypeScript</span>
+          <span class="tech-pill">Three.js</span>
+        </div>
+      </div>
+      <h3>River Plastic Interceptor</h3>
+      <p>Intercept plastic waste at the river source. Spawn floating plastic bottles, monitor collector net capacities, and adjust flow velocities in a 3D interface.</p>
+      <a href="river-simulator/" target="_blank" class="app-launch-btn">
+        Launch Interceptor
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+      </a>
+    </div>
+
+    <!-- 7. Ocean Boom Cleanup -->
+    <div class="app-card">
+      <div class="app-card-header">
+        <span class="app-type">Vite Project</span>
+        <div class="app-tech-pills">
+          <span class="tech-pill">TypeScript</span>
+          <span class="tech-pill">Three.js</span>
+        </div>
+      </div>
+      <h3>Ocean Boom Cleanup</h3>
+      <p>Simulates large-scale active recovery. Watch U-shaped boom structures harvest current-swept plastics, loaded into recycling transport vessels.</p>
+      <a href="ocean-clean/" target="_blank" class="app-launch-btn">
+        Launch Boom Cleanup
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+      </a>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- TECH STACK -->
+<div class="tech-section" id="tech">
+  <div class="tech-inner">
+    <div class="section-label">03 // Technology Stack</div>
+    <h2 class="section-title reveal">Engineered for Performance.</h2>
+    <p class="section-sub reveal">A modern web stack chosen for real-time interactivity, browser physics execution, and clean visuals.</p>
+
+    <div class="tech-grid reveal">
+      <div class="tech-card">
+        <div class="tech-icon">
+          <svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+        </div>
+        <h4>Node.js + Express</h4>
+        <p>Robust backend server providing REST APIs, file uploads for debris analysis, and monorepo static serving.</p>
+      </div>
+      <div class="tech-card">
+        <div class="tech-icon">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/><path d="M2 12h20"/></svg>
+        </div>
+        <h4>WebSockets (ws)</h4>
+        <p>Bidirectional communication channel syncing sensor values and notification alerts across tabs instantly.</p>
+      </div>
+      <div class="tech-card">
+        <div class="tech-icon">
+          <svg viewBox="0 0 24 24"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg>
+        </div>
+        <h4>Three.js &amp; WebGL</h4>
+        <p>GPU-accelerated graphics engines driving realistic 3D waves, moving ships, and flowing rivers.</p>
+      </div>
+      <div class="tech-card">
+        <div class="tech-icon">
+          <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="9" y1="21" x2="9" y2="9"/></svg>
+        </div>
+        <h4>sql.js (WebAssembly)</h4>
+        <p>SQLite database compiled to WebAssembly. Enables local database read/write queries without database setups.</p>
+      </div>
+      <div class="tech-card">
+        <div class="tech-icon">
+          <svg viewBox="0 0 24 24"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+        </div>
+        <h4>Google Gemini AI</h4>
+        <p>Gemini Flash 2.5 API integration performing image debris diagnostics and powering the operator assistant.</p>
+      </div>
+      <div class="tech-card">
+        <div class="tech-icon">
+          <svg viewBox="0 0 24 24"><path d="M21.21 15.89A10 10 0 1 1 8 2.83M22 12A10 10 0 0 0 12 2v10z"/></svg>
+        </div>
+        <h4>Vite &amp; TypeScript</h4>
+        <p>Modern tooling setup compiling TS files, organizing resources, and hot-reloading code fast during development.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<!-- GALLERY -->
+<div class="gallery-section" id="gallery">
+  <div class="gallery-inner">
+    <div class="section-label">04 // Visual Gallery</div>
+    <h2 class="section-title reveal">Dashboard &amp; 3D Environments.</h2>
+    <p class="section-sub reveal">Actual screenshots captured from the live admin console and operational simulations.</p>
+
+    <div class="gallery-grid reveal">
+      <!-- Admin Dashboard -->
+      <div class="gallery-item gallery-wide" onclick="openLightbox(this)" id="gal-dash1">
+        <img src="docs/media/WhatsApp Image 2026-04-02 at 7.59.47 AM.jpeg" alt="OceanOS Admin Dashboard - Operations Overview" loading="lazy" style="object-position: center top;">
+        <div class="gallery-label">Admin Dashboard — Telemetry Overview</div>
+      </div>
+      <div class="gallery-item" onclick="openLightbox(this)" id="gal-dash2">
+        <img src="docs/media/Screenshot 2026-04-02 075407.png" alt="Dashboard Analytics and Chart logs" loading="lazy" style="object-position: center 30%;">
+        <div class="gallery-label">Dashboard — Metric Analytics</div>
+      </div>
+
+      <!-- Ocean Cleanup Boom Simulation -->
+      <div class="gallery-item" onclick="openLightbox(this)" id="gal-boom1">
+        <img src="docs/media/WhatsApp Image 2026-04-02 at 6.31.17 AM.jpeg" alt="Ocean Cleanup Boom - U-shape floating boom collection system" loading="lazy" style="object-position: center 30%;">
+        <div class="gallery-label">Ocean Cleanup Boom — Active Operation</div>
+      </div>
+      <div class="gallery-item" onclick="openLightbox(this)" id="gal-boom2">
+        <img src="docs/media/WhatsApp Image 2026-04-02 at 6.31.17 AM (1).jpeg" alt="Ocean Cleanup Boom - Debris collection vessel" loading="lazy" style="object-position: center 35%;">
+        <div class="gallery-label">Cleanup Boom — Cargo Collection</div>
+      </div>
+
+      <!-- River Cleanup Simulation -->
+      <div class="gallery-item" onclick="openLightbox(this)" id="gal-river1">
+        <img src="docs/media/WhatsApp Image 2026-04-02 at 6.31.17 AM (2).jpeg" alt="River Plastic Interceptor Netting" loading="lazy" style="object-position: center center;">
+        <div class="gallery-label">River Cleanup Netting</div>
+      </div>
+      <div class="gallery-item" onclick="openLightbox(this)" id="gal-river2">
+        <img src="docs/media/WhatsApp Image 2026-04-02 at 6.33.00 AM.jpeg" alt="River Guardian control panel metrics" loading="lazy" style="object-position: center 30%;">
+        <div class="gallery-label">River Guardian — Telemetry HUD</div>
+      </div>
+
+      <!-- Ocean Pollution Detection -->
+      <div class="gallery-item crop-mac" onclick="openLightbox(this)" id="gal-poll1">
+        <img src="docs/media/WhatsApp Image 2026-04-02 at 6.37.13 AM.jpeg" alt="Factory shore oil spill simulation" loading="lazy">
+        <div class="gallery-label">Pollution Detection — Chemical Outflow</div>
+      </div>
+      <div class="gallery-item crop-mac" onclick="openLightbox(this)" id="gal-poll2">
+        <img src="docs/media/WhatsApp Image 2026-04-02 at 6.37.14 AM.jpeg" alt="Factory 3D structural rendering" loading="lazy">
+        <div class="gallery-label">Pollution Monitor — Shore Plant</div>
+      </div>
+
+      <!-- Aerial Drone Patrol -->
+      <div class="gallery-item gallery-wide crop-mac" onclick="openLightbox(this)" id="gal-drone1">
+        <img src="docs/media/WhatsApp Image 2026-04-02 at 6.37.14 AM (2).jpeg" alt="Drone UAV scanning ocean coordinates" loading="lazy">
+        <div class="gallery-label">Drone Patrol — Coordinates Surveillance</div>
+      </div>
+      <div class="gallery-item crop-mac" onclick="openLightbox(this)" id="gal-drone2">
+        <img src="docs/media/WhatsApp Image 2026-04-02 at 6.37.14 AM (3).jpeg" alt="Drone scan detecting marine life coordinates" loading="lazy">
+        <div class="gallery-label">Drone View — Biodiversity Scanner</div>
+      </div>
+      <div class="gallery-item crop-mac" onclick="openLightbox(this)" id="gal-drone3">
+        <img src="docs/media/WhatsApp Image 2026-04-02 at 6.37.15 AM.jpeg" alt="Drone detection alert flag" loading="lazy">
+        <div class="gallery-label">Drone View — MPA Protection Alarm</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- LIGHTBOX -->
+<div class="lightbox" id="lightbox" onclick="closeLightbox()">
+  <button class="lightbox-close" aria-label="Close">&#215;</button>
+  <img src="" alt="Enlarged view" id="lightboxImg">
+  <div class="lightbox-caption" id="lightboxCaption"></div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-left">
+    <div class="footer-name">OceanOS Platform</div>
+    <div class="footer-sub">Marine Conservation &amp; Management System &nbsp;·&nbsp; MIT License &nbsp;·&nbsp; Production-Ready.</div>
+  </div>
+  <div class="footer-links">
+    <a href="https://github.com/ishaaqdev/OceanOS" target="_blank" class="footer-link">
+      <svg viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+      GitHub
+    </a>
+  </div>
+</footer>
+
+<script>
+// ── NAV ──────────────────────────────────────────
+const nav = document.getElementById('mainNav');
+window.addEventListener('scroll', () => nav.classList.toggle('scrolled', window.scrollY > 40));
+
+const navToggle = document.getElementById('navToggle');
+const mobileNav = document.getElementById('mobileNav');
+navToggle.addEventListener('click', () => mobileNav.classList.toggle('active'));
+function closeMobile() { mobileNav.classList.remove('active'); }
+
+// ── OCEAN CANVAS ANIMATION ───────────────────────
+(function() {
+  const canvas = document.getElementById('ocean-canvas');
+  const ctx = canvas.getContext('2d');
+  let W, H, particles = [], waves = [];
+  const ACCENT = '0, 200, 255';
+  const ACCENT2 = '10, 245, 200';
+
+  function resize() {
+    W = canvas.width = window.innerWidth;
+    H = canvas.height = window.innerHeight;
+    initWaves();
+  }
+
+  function initWaves() {
+    waves = Array.from({length: 5}, (_, i) => ({
+      amp: 18 + i * 8,
+      period: 0.004 - i * 0.0005,
+      speed: 0.0006 + i * 0.0002,
+      offset: Math.random() * Math.PI * 2,
+      y: H * (0.3 + i * 0.1),
+      alpha: 0.04 + i * 0.015,
+      color: i % 2 === 0 ? ACCENT2 : ACCENT
+    }));
+  }
+
+  function initParticles() {
+    particles = Array.from({length: 80}, () => ({
+      x: Math.random() * W,
+      y: Math.random() * H,
+      r: Math.random() * 1.8 + 0.4,
+      vx: (Math.random() - 0.5) * 0.3,
+      vy: (Math.random() - 0.5) * 0.3,
+      alpha: Math.random() * 0.5 + 0.1,
+      color: Math.random() > 0.6 ? ACCENT2 : ACCENT,
+    }));
+  }
+
+  let t = 0;
+  function draw() {
+    ctx.clearRect(0, 0, W, H);
+    t += 1;
+
+    // Waves
+    waves.forEach(w => {
+      ctx.beginPath();
+      ctx.moveTo(0, H);
+      for (let x = 0; x <= W; x += 4) {
+        const y = w.y + Math.sin(x * w.period + t * w.speed + w.offset) * w.amp;
+        ctx.lineTo(x, y);
+      }
+      ctx.lineTo(W, H);
+      ctx.closePath();
+      const grad = ctx.createLinearGradient(0, w.y - w.amp, 0, H);
+      grad.addColorStop(0, `rgba(${w.color}, ${w.alpha})`);
+      grad.addColorStop(1, 'rgba(0,0,0,0)');
+      ctx.fillStyle = grad;
+      ctx.fill();
+    });
+
+    // Particles (floating light dots)
+    particles.forEach(p => {
+      p.x += p.vx; p.y += p.vy;
+      if (p.x < -4) p.x = W + 4;
+      if (p.x > W + 4) p.x = -4;
+      if (p.y < -4) p.y = H + 4;
+      if (p.y > H + 4) p.y = -4;
+
+      ctx.beginPath();
+      ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+      ctx.fillStyle = `rgba(${p.color}, ${p.alpha})`;
+      ctx.fill();
+    });
+
+    // Connecting lines between nearby particles
+    for (let i = 0; i < particles.length; i++) {
+      for (let j = i + 1; j < particles.length; j++) {
+        const dx = particles[i].x - particles[j].x;
+        const dy = particles[i].y - particles[j].y;
+        const dist = Math.sqrt(dx*dx + dy*dy);
+        if (dist < 90) {
+          ctx.beginPath();
+          ctx.moveTo(particles[i].x, particles[i].y);
+          ctx.lineTo(particles[j].x, particles[j].y);
+          ctx.strokeStyle = `rgba(${ACCENT}, ${0.06 * (1 - dist / 90)})`;
+          ctx.lineWidth = 0.5;
+          ctx.stroke();
+        }
+      }
+    }
+
+    requestAnimationFrame(draw);
+  }
+
+  window.addEventListener('resize', () => { resize(); initParticles(); });
+  resize();
+  initParticles();
+  draw();
+})();
+
+// ── SCROLL REVEAL ─────────────────────────────────
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); }
+  });
+}, { threshold: 0.1 });
+document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+// ── LIGHTBOX ──────────────────────────────────────
+const lightbox = document.getElementById('lightbox');
+const lightboxImg = document.getElementById('lightboxImg');
+const lightboxCaption = document.getElementById('lightboxCaption');
+
+function openLightbox(el) {
+  const img = el.querySelector('img');
+  const label = el.querySelector('.gallery-label');
+  lightboxImg.src = img.src;
+  lightboxCaption.textContent = label ? label.textContent.trim() : img.alt;
+  lightbox.classList.add('active');
+  document.body.style.overflow = 'hidden';
+}
+function closeLightbox() {
+  lightbox.classList.remove('active');
+  document.body.style.overflow = '';
+}
+document.addEventListener('keydown', e => { if (e.key === 'Escape') closeLightbox(); });
+</script>
+
+</body>
+</html>

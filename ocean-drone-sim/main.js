@@ -1087,7 +1087,7 @@ function animate() {
           const conf = Math.floor(Math.random() * 3 + 97);
           if (t.userData.type === 'ship') {
             const illegal = inMPA(t.position);
-            addLog(`TARGET ACQUIRED: ${t.userData.name} [${conf}%]${illegal ? ' ⚠ IN MPA!' : ''}`, illegal ? 'alert' : '');
+            addLog(`TARGET ACQUIRED: ${t.userData.name} [${conf}%]${illegal ? ' ALERT: IN MPA!' : ''}`, illegal ? 'alert' : '');
           } else if (t.userData.type === 'plastic') {
             addLog(`DETECTED: ${t.userData.name} – ${t.userData.toxicity} [${conf}%]`, 'plastic');
           } else {
@@ -1177,7 +1177,7 @@ function animate() {
 
           if (t.userData.type === 'ship') {
             const illegal = inMPA(t.position);
-            addLog(`TARGET ACQUIRED: ${t.userData.name} [${conf}%]${illegal ? ' ⚠ IN MPA!' : ''}`, illegal ? 'alert' : '');
+            addLog(`TARGET ACQUIRED: ${t.userData.name} [${conf}%]${illegal ? ' ALERT: IN MPA!' : ''}`, illegal ? 'alert' : '');
           } else if (t.userData.type === 'plastic') {
             addLog(`DETECTED: ${t.userData.name} – ${t.userData.toxicity} [${conf}%]`, 'plastic');
           } else {
@@ -1283,12 +1283,12 @@ function animate() {
 
       if (state.target.userData.type === 'ship') {
         const illegal = inMPA(state.target.position);
-        $tgtData.innerHTML = `MASS: ${state.target.userData.mass} | SPD: ${state.target.userData.speed}<br/>STATUS: ${illegal ? '⚠ ILLEGAL TRAWLING IN MPA' : '✓ AUTHORIZED'}`;
+        $tgtData.innerHTML = `MASS: ${state.target.userData.mass} | SPD: ${state.target.userData.speed}<br/>STATUS: ${illegal ? 'ILLEGAL TRAWLING IN MPA' : 'AUTHORIZED'}`;
         $box.className = illegal ? 'illegal' : '';
 
         if (illegal) {
           $blockMpa.className = 'data-block alert';
-          $valMpa.textContent = '⚠ VIOLATION';
+          $valMpa.textContent = 'VIOLATION';
           $valMpa.className = 'val alert';
         } else {
           $blockMpa.className = 'data-block';

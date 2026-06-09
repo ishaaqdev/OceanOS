@@ -2,7 +2,8 @@
 // FisherGuard — Fisherman App Logic
 // ═══════════════════════════════════════════════════════
 
-const API = 'http://localhost:3001/api';
+const API_PORT = window.OceanOS_Backend_Port || 3001;
+const API = `http://localhost:${API_PORT}/api`;
 const FISHER_ID = 'F001';
 const FISHER_NAME = 'Ahmed Hassan';
 

@@ -390,11 +390,11 @@ const $btnCam=document.getElementById('btn-camera');
 
 /* ═══════════ CONTROLS ═══════════ */
 $btnSpill.addEventListener('click', ()=>{
-  if(!state.spillActive){state.spillActive=true; $btnSpill.textContent='🛢️ Spilling...'; $btnSpill.style.opacity='0.5'; $btnSpill.style.pointerEvents='none';}
+  if(!state.spillActive){state.spillActive=true; $btnSpill.textContent='Spilling...'; $btnSpill.style.opacity='0.5'; $btnSpill.style.pointerEvents='none';}
 });
 $btnReset.addEventListener('click', ()=>{
   state.spillActive=false; state.spillProgress=0; state.pollutionLevel=0;
-  $btnSpill.textContent='🛢️ Start Oil Spill'; $btnSpill.style.opacity='1'; $btnSpill.style.pointerEvents='auto';
+  $btnSpill.textContent='Start Oil Spill'; $btnSpill.style.opacity='1'; $btnSpill.style.pointerEvents='auto';
   for(let i=0;i<OIL_N;i++){oPos[i*3]=-8;oPos[i*3+1]=-5;oPos[i*3+2]=3;oSize[i]=0;oAlpha[i]=0;state.oilParticles[i].active=false;}
   oGeo.attributes.position.needsUpdate=oGeo.attributes.size.needsUpdate=oGeo.attributes.alpha.needsUpdate=true;
   oceanMat.uniforms.uPollution.value=0;
@@ -482,7 +482,7 @@ function animate(){
   const pl=Math.round(state.pollutionLevel);
   $fill.style.width=pl+'%'; $pct.textContent=pl+'%';
   if(isAlert){
-    $light.classList.add('red'); $status.textContent='⚠ POLLUTION DETECTED'; $status.style.color='#ff1744';
+    $light.classList.add('red'); $status.textContent='POLLUTION DETECTED'; $status.style.color='#ff1744';
     $quality.textContent=pl>70?'CRITICAL':'POOR'; $quality.className='stat-value '+(pl>70?'danger':'warning');
     $oil.textContent=Math.round(pl*12)+' ppm'; $oil.className='stat-value danger';
   } else {
@@ -507,4 +507,4 @@ function animate(){
 // start
 setTimeout(()=>document.getElementById('loading-screen').classList.add('hidden'), 1200);
 animate();
-console.log('🌊 Ocean Pollution Simulator — running');
+console.log('Ocean Pollution Simulator — running');

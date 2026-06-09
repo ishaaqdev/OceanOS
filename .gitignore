@@ -25,3 +25,10 @@ npm-debug.log*
 
 # Gemini agent files
 .gemini/
+
+# Build and dev server artifacts
+dist/
+shared/port-config.js
+dashboard/shared/
+fisherman-app/shared/
+simulation/shared/
